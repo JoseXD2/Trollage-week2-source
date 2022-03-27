@@ -6202,29 +6202,6 @@ class PlayState extends MusicBeatState
 					FlxG.stage.window.onFocusOut.add(focusOut);
 					
 
-					
-			
-					
-
-					GlobalVideo.get().source(source);
-					GlobalVideo.get().clearPause();
-					if (GlobalVideo.isWebm)
-					{
-						GlobalVideo.get().updatePlayer();
-					}
-					GlobalVideo.get().show();
-			
-					if (GlobalVideo.isWebm)
-					{
-						GlobalVideo.get().restart();
-					} else {
-						GlobalVideo.get().play();
-					}
-					
-					
-			
-					        		
-					
 					remove(gf);
 					remove(boyfriend);
 					remove(dad);
