@@ -257,7 +257,7 @@ class MainMenuState extends MusicBeatState
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 							{
 								var daChoice:String = optionShit[curSelected];
-								var video:MP4Handler = new MP4Handler();
+		
 								switch (daChoice)
 								{
 									case 'story mode':
