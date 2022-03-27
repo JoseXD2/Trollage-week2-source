@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="mmmmm.png"><SubTexture name="mmmmm right0000" x="0" y="0" width="215" height="91" frameX="0" frameY="0" frameWidth="215" frameHeight="91" />
+<SubTexture name="mmmmm left0000" x="215" y="0" width="216" height="76" frameX="0" frameY="0" frameWidth="216" frameHeight="76" />
+<SubTexture name="mmmmm down0000" x="431" y="0" width="217" height="92" frameX="0" frameY="0" frameWidth="217" frameHeight="92" />
+<SubTexture name="mmmmm up0000" x="648" y="0" width="207" height="87" frameX="0" frameY="0" frameWidth="207" frameHeight="87" />
+<SubTexture name="mmmmm idle0000" x="0" y="92" width="680" height="263" frameX="0" frameY="0" frameWidth="680" frameHeight="263" />
+</TextureAtlas>
