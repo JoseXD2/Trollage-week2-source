@@ -6238,15 +6238,7 @@ class PlayState extends MusicBeatState
 					add(boyfriend);
 					add(dad);
 			
-					trace('poggers');
-			
-					if (!songStarted)
-						
 					
-						
-					#end
-				}
-
 	function noteMiss(direction:Int = 1, daNote:Note):Void
 	{
 		if (!boyfriend.stunned)
