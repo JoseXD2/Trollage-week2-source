@@ -6692,7 +6692,7 @@ class PlayState extends MusicBeatState
 					FlxG.camera.flash(FlxColor.WHITE, 0.5, false);
 					if (FlxG.random.bool(10))
 					
-					else
+					
 						luaModchart.executeState('swap0up', []);
 					for (i in 0...playerStrums.length) {
 							playerStrums.members[i].angle = FlxG.random.int(Std.int(playerStrums.members[0].angle - 180), Std.int(playerStrums.members[0].angle + 180));
