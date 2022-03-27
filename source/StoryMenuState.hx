@@ -327,8 +327,7 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			var video:MP4Handler = new MP4Handler();
-
+			
 			if (curWeek == 2 && !isCutscene)
 				{
 					new FlxTimer().start(1, function(tmr:FlxTimer)
