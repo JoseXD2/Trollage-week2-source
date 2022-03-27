@@ -3565,28 +3565,14 @@ class PlayState extends MusicBeatState
 					{
 						switch (curStep)
 						{
-							case 384:
-								luaModchart.executeState('swap1', []);
-							case 640:
-								luaModchart.executeState('swap2', []);
-							case 768:
-								luaModchart.executeState('swap3', []);
-							case 896:
-								luaModchart.executeState('swap4', []);
+							
 						}
 					}
 				else
 					{
 						switch (curStep)
 						{
-							case 384:
-								luaModchart.executeState('swap1flip', []);
-							case 640:
-								luaModchart.executeState('swap2flip', []);
-							case 768:
-								luaModchart.executeState('swap3flip', []);
-							case 896:
-								luaModchart.executeState('swap4flip', []);
+							
 						}
 					}
 				
@@ -6220,13 +6206,7 @@ class PlayState extends MusicBeatState
 					FlxG.stage.window.onFocusOut.add(focusOut);
 					FlxG.stage.window.onFocusIn.add(focusIn);
 
-					var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
-					//WebmPlayer.SKIP_STEP_LIMIT = 90;
-					var str1:String = "WEBM SHIT"; 
-					webmHandler = new WebmHandler();
-					webmHandler.source(ourSource);
-					webmHandler.makePlayer();
-					webmHandler.webm.name = str1;
+					
 			
 					GlobalVideo.setWebm(webmHandler);
 
@@ -6695,47 +6675,8 @@ class PlayState extends MusicBeatState
 					luaModchart.executeState('fadeOut', []);
 					FlxG.camera.flash(FlxColor.WHITE, 0.5, false);
 					if (FlxG.random.bool(10))
-						luaModchart.executeState('swap1', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap2', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap3', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap4', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap5', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap6', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap7', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap8', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap9', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap10', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap1', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap2', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap3', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap4', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap5', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap6', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap7', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap8', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap9', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap0', []);
-					else
-						luaModchart.executeState('swap0', []);
+						
+					
 					for (i in 0...playerStrums.length) {
 							playerStrums.members[i].angle = FlxG.random.int(Std.int(playerStrums.members[0].angle - 180), Std.int(playerStrums.members[0].angle + 180));
 							playerStrums.members[i].y = FlxG.random.int(Std.int(playerStrums.members[0].y - 50), Std.int(playerStrums.members[0].y + 50));
@@ -6750,45 +6691,7 @@ class PlayState extends MusicBeatState
 					luaModchart.executeState('fadeOutup', []);
 					FlxG.camera.flash(FlxColor.WHITE, 0.5, false);
 					if (FlxG.random.bool(10))
-						luaModchart.executeState('swap1up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap2up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap3up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap4up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap5up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap6up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap7up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap8up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap9up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap10up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap1up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap2up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap3up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap4up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap5up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap6up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap7up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap8up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap9up', []);
-					else if (FlxG.random.bool(10))
-						luaModchart.executeState('swap0up', []);
+					
 					else
 						luaModchart.executeState('swap0up', []);
 					for (i in 0...playerStrums.length) {
