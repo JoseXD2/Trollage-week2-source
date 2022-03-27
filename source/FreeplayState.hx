@@ -299,7 +299,7 @@ class FreeplayState extends MusicBeatState
 		
 		#if !switch
 		intendedScore = Highscore.getScore(songHighscore, curDifficulty);
-		combo = Highscore.getCombo(songHighscore, curDifficulty);
+		
 		#end
 
 	}
