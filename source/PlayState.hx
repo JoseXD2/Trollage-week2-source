@@ -6722,8 +6722,7 @@ class PlayState extends MusicBeatState
 
 	var justChangedMania:Bool = false;
 
-	public function switchMania(newMania:Int) //i know this is pretty big, but how else am i gonna do this shit
-	{
+	
 		if (mania == 2) //so it doesnt break the fucking game
 		{
 			maniaToChange = newMania;
