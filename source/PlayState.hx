@@ -5113,7 +5113,6 @@ class PlayState extends MusicBeatState
 
 			#if !switch
 			Highscore.saveScore(songHighscore, Math.round(songScore), storyDifficulty);
-			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(accuracy), storyDifficulty);
 			#end
 		}
 
@@ -5171,7 +5170,7 @@ class PlayState extends MusicBeatState
 
 					if (SONG.validScore)
 					{
-						NGio.unlockMedal(60961);
+						
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 
@@ -6225,7 +6224,7 @@ class PlayState extends MusicBeatState
 						GlobalVideo.get().play();
 					}
 					
-					var data = webmHandler.webm.bitmapData;
+					
 			
 					videoSprite = new FlxSprite(-470,-30).loadGraphic(data);
 			
@@ -6242,9 +6241,9 @@ class PlayState extends MusicBeatState
 					trace('poggers');
 			
 					if (!songStarted)
-						webmHandler.pause();
-					else
-						webmHandler.resume();
+						
+					
+						
 					#end
 				}
 
@@ -6672,7 +6671,7 @@ class PlayState extends MusicBeatState
 		{
 			if (PlayStateChangeables.useDownscroll)
 				{
-					luaModchart.executeState('fadeOut', []);
+					
 					FlxG.camera.flash(FlxColor.WHITE, 0.5, false);
 					if (FlxG.random.bool(10))
 						
@@ -6688,12 +6687,12 @@ class PlayState extends MusicBeatState
 				}
 			else 
 				{
-					luaModchart.executeState('fadeOutup', []);
+					
 					FlxG.camera.flash(FlxColor.WHITE, 0.5, false);
 					if (FlxG.random.bool(10))
 					
 					
-						luaModchart.executeState('swap0up', []);
+						
 					for (i in 0...playerStrums.length) {
 							playerStrums.members[i].angle = FlxG.random.int(Std.int(playerStrums.members[0].angle - 180), Std.int(playerStrums.members[0].angle + 180));
 							playerStrums.members[i].y = FlxG.random.int(Std.int(playerStrums.members[0].y - 50), Std.int(playerStrums.members[0].y + 50));
