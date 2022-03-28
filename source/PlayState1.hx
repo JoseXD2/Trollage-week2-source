@@ -1,5 +1,6 @@
 package;
 
+import ChromaticAberrationShader;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -80,15 +81,28 @@ class PlayState extends MusicBeatState
 	public static var bads:Int = 0;
 	public static var goods:Int = 0;
 	public static var sicks:Int = 0;
-
+        public static var mania:Int = 0;
+	public static var maniaToChange:Int = 0;
+	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3];
+	private var ctrTime:Float = 0;
+	
+	var usedTimeTravel:Bool = false;
+	
 	public static var songPosBG:FlxSprite;
+	public var visibleCombos:Array<FlxSprite> = [];
 	public static var songPosBar:FlxBar;
 
 	public static var rep:Replay;
 	public static var loadRep:Bool = false;
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
+	
+	
+        public var curbg:FlxSprite;
 
+	public var variavel:Int;
+	public var variavel2:Int;
+	
 	var halloweenLevel:Bool = false;
 
 	var songLength:Float = 0;
@@ -109,8 +123,19 @@ class PlayState extends MusicBeatState
 	public static var boyfriend:Boyfriend;
 
 	public var notes:FlxTypedGroup<Note>;
+	var noteSplashes:FlxTypedGroup<NoteSplash>;
 	private var unspawnNotes:Array<Note> = [];
-
+        private var sDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
+	private var dadNote:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
+	private var bfsDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
+	public var strumLine:FlxSprite;
+	private var curSection:Int = 0;
+	
+	var SpinAmount:Float = 0;
+	
+	var replacableTypeList:Array<Int> = [3,4,7]; //note types do wanna hit
+	var nonReplacableTypeList:Array<Int> = [1,2,6]; //note types you dont wanna hit
+	
 	public var strumLine:FlxSprite;
 	private var curSection:Int = 0;
 
@@ -128,6 +153,12 @@ class PlayState extends MusicBeatState
 	private var gfSpeed:Int = 1;
 	public var health:Float = 1; //making public because sethealth doesnt work without it
 	private var combo:Int = 0;
+	public static var misses:Int = 0;
+	public static var campaignMisses:Int = 0;
+	public static var campaignSicks:Int = 0;
+	public static var campaignGoods:Int = 0;
+	public static var campaignBads:Int = 0;
+	public static var campaignShits:Int = 0;
 	public static var misses:Int = 0;
 	private var accuracy:Float = 0.00;
 	private var accuracyDefault:Float = 0.00;
@@ -155,7 +186,21 @@ class PlayState extends MusicBeatState
 	var currentFrames:Int = 0;
 
 	public var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
-
+	
+        var halloweenBG:FlxSprite;
+	var blank:FlxSprite;
+	var bgbf:FlxSprite;
+	var blank1:FlxSprite;
+	var shad1:FlxSprite;
+	var shad2:FlxSprite;
+	var shad3:FlxSprite;
+	var bg_r:FlxSprite;
+	var tralling:FlxSprite;
+	var trallingwoah:FlxSprite;
+	var rain:FlxSprite;
+	var wBg:FlxSprite;
+	var nwBg:FlxSprite;
+	var isHalloween:Bool = false;
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 
@@ -700,6 +745,31 @@ class PlayState extends MusicBeatState
 						stageCurtains.active = false;
 	
 						add(stageCurtains);
+		} 
+		case 'alley'
+                       {
+        	
+          		defaultCamZoom = 0.9;
+            	curStage = 'alley';
+				var bgTex = Paths.getSparrowAtlas('wity/BallisticBackground', 'Troll');
+			 	nwBg = new FlxSprite(-600, -200);
+			 	nwBg.frames = bgTex;
+			 	nwBg.antialiasing = true;
+			 	nwBg.scrollFactor.set(0.9, 0.9);
+			 	nwBg.active = true;
+			 	nwBg.animation.addByPrefix('start', 'Background Whitty Start', 24, false);
+			 	nwBg.animation.addByPrefix('gaming', 'Background Whitty Startup', 24, false);
+			 	nwBg.animation.addByPrefix('gameButMove', 'Background Whitty Moving', 16, true);
+				nwBg.animation.play('gameButMove');
+            	wBg = new FlxSprite(-500, -300).loadGraphic(Paths.image('wity/whittyback', 'Troll'));
+            	wBg.antialiasing = true;
+            	wBg.scrollFactor.set(0.9, 0.9);
+            	wBg.active = false;
+
+            	add(wBg);
+				add(nwBg);
+				nwBg.alpha = 0.01
+
 				}
 			default:
 			{
